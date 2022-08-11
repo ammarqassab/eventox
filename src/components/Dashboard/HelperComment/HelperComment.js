@@ -105,7 +105,7 @@ const HelperComment = () => {
                             <table className="table-all">
                             <thead>
                                 <tr>
-                                    <th>Id= {middleware == 'Admin' && commenthelper ? commenthelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
+                                    <th>Count= {middleware == 'Admin' && commenthelper ? commenthelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
                                     <th>Comment</th>
                                     <th>Content</th>
                                     <th>Action</th>

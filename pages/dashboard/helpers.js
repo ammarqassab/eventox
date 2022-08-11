@@ -147,7 +147,7 @@ const Helpers = () => {
                         <table className="table-all">
                         <thead>
                             <tr>
-                                <th>index= {helper ? helper.length : 0}</th>
+                                <th>Count= {helper ? helper.length : 0}</th>
                                 <th>Id</th>
                                 <th>Full Name</th>
                                 <th>Email</th>

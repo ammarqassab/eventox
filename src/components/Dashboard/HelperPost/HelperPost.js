@@ -5,6 +5,7 @@ import { appName } from '../../../Api/AuthApi';
 import { acceptPostApi, ignorePostApi } from '../../../Api/HelperApi';
 import { deletehelper, deleteposthelper } from '../../../Store/HelperSlice';
 import { deletePostAdminApi, ignorePostAdminApi } from '../../../Api/AdminApi';
+import Image from 'next/image'
 
 const HelperPost = () => {
     
@@ -106,7 +107,7 @@ const HelperPost = () => {
                             <table className="table-all">
                             <thead>
                                 <tr>
-                                    <th>Id= {middleware == 'Admin' && posthelper ? posthelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
+                                    <th>Count= {middleware == 'Admin' && posthelper ? posthelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
                                     <th>Photo</th>
                                     <th>Content</th>
                                     <th>Action</th>
@@ -116,7 +117,11 @@ const HelperPost = () => {
                                 {searchusers.length > 0 ? searchusers.map((iteme, index) =>
                                 <tr key={index}>
                                     <td>{index + 1}</td>
-                                    <td>{iteme.photo}</td>
+                                    <td>
+                                        <span style={{width:'50px',height:'50px'}} >
+                                            {iteme.photo !="null" ? <Image src={`/imagepost/${iteme.photo}`} width={`100%`} height={`100%`} layout="responsive" alt={iteme.photo}  empty="true"/>:'No Image'}
+                                        </span>
+                                    </td>
                                     <td>{iteme.content}</td>
                                     <td>
                                         <span className=" button bgc-4 hover-bgc-2 round-large margin"><span className="fas fa-sync-alt textc-1" onClick={() => {middleware == 'Admin' ? ignorePostAdmin(iteme.id, index): acceptPost(iteme.id, index)}}></span></span>

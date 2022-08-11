@@ -105,7 +105,7 @@ const HelperUser = () => {
                             <table className="table-all">
                             <thead>
                                 <tr>
-                                    <th>Id= {middleware == 'Admin' && userhelper ? userhelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
+                                    <th>Count= {middleware == 'Admin' && userhelper ? userhelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
                                     <th>Full Name</th>
                                     <th>Email</th>
                                     <th>Content</th>
