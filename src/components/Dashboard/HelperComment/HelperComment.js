@@ -123,7 +123,7 @@ const HelperComment = () => {
                                     </td>
                                 </tr>
                                 )
-                                : <tr><td>no Users</td></tr>
+                                : <tr><td>No Comment</td></tr>
                                 }
                             </tbody>
                             </table>

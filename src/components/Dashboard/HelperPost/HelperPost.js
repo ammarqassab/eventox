@@ -110,6 +110,7 @@ const HelperPost = () => {
                                     <th>Count= {middleware == 'Admin' && posthelper ? posthelper.length :middleware != 'Admin' && helper ? helper.length : 0}</th>
                                     <th>Photo</th>
                                     <th>Content</th>
+                                    <th>Body</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -119,17 +120,18 @@ const HelperPost = () => {
                                     <td>{index + 1}</td>
                                     <td>
                                         <span style={{width:'50px',height:'50px'}} >
-                                            {iteme.photo !="null" ? <Image src={`/imagepost/${iteme.photo}`} width={`100%`} height={`100%`} layout="responsive" alt={iteme.photo}  empty="true"/>:'No Image'}
+                                            {iteme.post_id ? <Image src={`/imagepost/${iteme.post_id}`} width={`100%`} height={`100%`} layout="responsive" alt={iteme.post_id}  empty="true"/>:'No Image'}
                                         </span>
                                     </td>
                                     <td>{iteme.content}</td>
+                                    <td>{iteme.Content ? iteme.Content : "No Body"}</td>
                                     <td>
                                         <span className=" button bgc-4 hover-bgc-2 round-large margin"><span className="fas fa-sync-alt textc-1" onClick={() => {middleware == 'Admin' ? ignorePostAdmin(iteme.id, index): acceptPost(iteme.id, index)}}></span></span>
                                         <span className=" button bgc-4 hover-bgc-2 round-large margin"><span className="fas fa-trash-alt textc-1" onClick={() => {middleware == 'Admin' ? deletePostAdmin(iteme.id, index): ignorePost(iteme.id, index)}}></span></span>
                                     </td>
                                 </tr>
                                 )
-                                : <tr><td>no Users</td></tr>
+                                : <tr><td>No post</td></tr>
                                 }
                             </tbody>
                             </table>
